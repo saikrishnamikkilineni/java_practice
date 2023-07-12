@@ -19,7 +19,7 @@ public class Lib {
     return stu_author;
   }
 
-  public void setStu_category(String stucategory) {
+  public void setStu_category(String stu_category) {
     this.stu_category = stu_category;
   }
 

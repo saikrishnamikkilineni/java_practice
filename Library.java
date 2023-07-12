@@ -33,25 +33,35 @@ public class Library {
   // Search operation
   public void search() {
     System.out.println("Enter books by title or author :");
-    String search = sc.next();
+    String title = sc.next();
+
     for (int i = 0; i < num; i++) {
-      if (search == array[i].getStu_title()) {
-        System.out.println("Author :" + array[i].getStu_author());
+      if (title.equals(array[i].getStu_title()) || title.equals(array[i].getStu_author())) {
+
         System.out.println("Category :" + array[i].getStu_category());
       }
     }
   }
 
-  // Display books based on specific
+  // Display books based on specific category
 
   public void display() {
     System.out.println("Enter the category ");
     String category = sc.next();
     for (int i = 0; i < num; i++) {
-      if (category == array[i].getStu_category()) {
+      if (category .equals( array[i].getStu_category())) {
         System.out.println("Title: " + array[i].getStu_title());
-        System.out.println("author :" + array[i].getStu_category());
+        System.out.println("author :" + array[i].getStu_author());
       }
+    }
+  }
+
+  public void view() {
+    for (int i = 0; i < num; i++) {
+      System.out.println("No: " + i);
+      System.out.println("Title  :" + array[i].getStu_title());
+      System.out.println("Author:" + array[i].getStu_author());
+      System.out.println("Category :" + array[i].getStu_category());
     }
   }
 
@@ -76,8 +86,10 @@ public class Library {
 
       else if (option == 3) {
         display();
+      } else if (option == 4) {
+        view();
       }
-    } while (option != 4);
+    } while (option != 5);
 
   }
 
